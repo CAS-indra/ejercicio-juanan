@@ -10,8 +10,7 @@ import { PieComponent } from './pie/pie.component';
     CabeceraComponent,
     PieComponent
   ],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
+  exports: [CabeceraComponent, PieComponent],
 })
 export class LayoutModule { }
