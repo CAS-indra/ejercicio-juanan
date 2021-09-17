@@ -1,1 +1,13 @@
-<p>home works!</p>
+<app-titulo></app-titulo>
+
+<h3> Hay {{ transacciones.length }} transacciones. </h3>
+
+<div *ngFor="let transaccion of transacciones">
+  <span [ngClass]="{ 'spent': transaccion.kind=='spent', 'income': transaccion.kind=='income' }">
+    {{ transaccion.name }} - {{ transaccion.amount }}
+  </span>
+</div>
+
+<div>
+  <p [ngClass]="{ 'spent': balance() < 0, 'income': balance() > 0 }"> Balance Total: {{ balance() }}</p>
+</div>
