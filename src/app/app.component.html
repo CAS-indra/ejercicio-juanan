@@ -3,5 +3,11 @@
 
 <h3> Hay {{ transacciones.length }} transacciones. </h3>
 
+<div *ngFor="let transaccion of transacciones">
+  <span [ngClass]="{ 'spent': transaccion.kind=='spent', 'income': transaccion.kind=='income' }">
+    {{ transaccion.name }} - {{ transaccion.amount }}
+  </span>
+</div>
+
 <router-outlet></router-outlet>
 <app-pie></app-pie>
