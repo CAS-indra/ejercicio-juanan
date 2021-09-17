@@ -48,4 +48,18 @@ export class AppComponent {
       ownerId: 'world_admin',
     },
   ];
+
+  public balance(): number {
+    let total = 0;
+
+    for(let transaccion of this.transacciones){
+      if(transaccion.kind == 'income'){
+        total += transaccion.amount;
+      } else {
+        total -= transaccion.amount;
+      }
+    }
+
+    return total;
+  }
 }
