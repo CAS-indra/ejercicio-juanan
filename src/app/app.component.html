@@ -10,7 +10,7 @@
 </div>
 
 <div>
-  <p>Balance Total: {{ balance() }}</p>
+  <p [ngClass]="{ 'spent': balance() < 0, 'income': balance() > 0 }"> Balance Total: {{ balance() }}</p>
 </div>
 
 <router-outlet></router-outlet>
