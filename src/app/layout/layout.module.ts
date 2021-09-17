@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { PieComponent } from './pie/pie.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -10,7 +11,7 @@ import { PieComponent } from './pie/pie.component';
     CabeceraComponent,
     PieComponent
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   exports: [CabeceraComponent, PieComponent],
 })
 export class LayoutModule { }
