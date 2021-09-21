@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'contacto', loadChildren: () => import('./contacto/contacto.module').then(m => m.ContactoModule) },
   { path: 'auth/login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
   { path: 'transaction/new', loadChildren: () => import('./nueva-transaccion/nueva-transaccion.module').then(m => m.NuevaTransaccionModule) },
-  { path: 'transaction/:id', loadChildren: () => import('./transaccion/transaccion.module').then(m => m.TransaccionModule) },
+  { path: 'transaction', loadChildren: () => import('./transaccion/transaccion.module').then(m => m.TransaccionModule) },
 ];
 
 @NgModule({
