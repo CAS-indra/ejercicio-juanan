@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TransaccionesService {
-  public transacciones =  [
+  private transacciones =  [
     {
       id: 'design_a_virus',
       name: 'Design a virus',
