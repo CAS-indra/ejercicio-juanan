@@ -4,7 +4,9 @@
 
 <div *ngFor="let transaccion of transacciones">
   <span [ngClass]="{ 'spent': transaccion.kind=='spent', 'income': transaccion.kind=='income' }">
-    {{ transaccion.name }} - {{ transaccion.amount }}
+    <a routerLink="./transaccion/{{transaccion.id}}">
+      {{ transaccion.name }} - {{ transaccion.amount }}
+    </a>
   </span>
 </div>
 
