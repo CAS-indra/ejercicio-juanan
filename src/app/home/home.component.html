@@ -1,15 +1,17 @@
 <app-titulo></app-titulo>
 
-<h3> Hay {{ transacciones.length }} transacciones. </h3>
+<h3> Hay {{ transacciones?.length }} transacciones. </h3>
 
-<div *ngFor="let transaccion of transacciones">
-  <span [ngClass]="{ 'spent': transaccion.kind=='spent', 'income': transaccion.kind=='income' }">
-    <a routerLink="./transaccion/{{transaccion.id}}">
-      {{ transaccion.name }} - {{ transaccion.amount }}
-    </a>
-  </span>
+<div *ngIf="transacciones">
+  <div *ngFor="let transaccion of transacciones">
+    <span [ngClass]="{ 'spent': transaccion.kind=='spent', 'income': transaccion.kind=='income' }">
+      <a routerLink="./transaccion/{{transaccion.id}}">
+        {{ transaccion.name }} - {{ transaccion.amount }}
+      </a>
+    </span>
+  </div>
 </div>
 
 <div>
-  <p [ngClass]="{ 'spent': balance() < 0, 'income': balance() > 0 }"> Balance Total: {{ balance() }}</p>
+  <p [ngClass]="{ 'spent': balanceTotal < 0, 'income': balanceTotal > 0 }"> Balance Total: {{ balanceTotal }}</p>
 </div>

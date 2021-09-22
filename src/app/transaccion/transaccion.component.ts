@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { TransaccionesService } from '../data/transacciones.service';
 
 @Component({
@@ -9,14 +10,13 @@ import { TransaccionesService } from '../data/transacciones.service';
 })
 export class TransaccionComponent implements OnInit {
   public transaccionId = '';
-  public transaccion = {id: '', name: '', description: '', kind: '', amount: 0, date: '', projectId: '',  ownerId: ''};
+  public transaccion$: Observable<any>;
 
-  constructor(private route: ActivatedRoute, private service: TransaccionesService) { }
-
-  ngOnInit(): void {
+  constructor(private route: ActivatedRoute, private service: TransaccionesService) {
     this.transaccionId = this.route.snapshot.params['id'];
-    const transacciones = this.service.getTransacciones();
-    this.transaccion = transacciones.find(p => p.id === this.transaccionId);
+    this.transaccion$ = this.service.getTransaccionesById$(this.transaccionId).pipe();
   }
 
+  ngOnInit(): void {
+  }
 }

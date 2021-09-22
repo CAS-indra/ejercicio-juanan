@@ -1,3 +1,5 @@
 <h3> Transación: {{ transaccionId }} </h3>
-<p>Nombre: {{ transaccion.name }}</p>
-<p>Amount: {{ transaccion.amount }}</p>
+<div *ngIf="transaccion$ | async as transaccion">
+  <p>Nombre: {{ transaccion.name }}</p>
+  <p>Amount: {{ transaccion.amount }}</p>
+</div>

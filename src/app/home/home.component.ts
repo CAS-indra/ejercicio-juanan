@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { TransaccionesService } from '../data/transacciones.service';
 
 @Component({
@@ -7,9 +8,18 @@ import { TransaccionesService } from '../data/transacciones.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public transacciones = this.service.getTransacciones();
+  public transacciones: any[] = [];
+  public balanceTotal = this.balance();
 
-  constructor(private service: TransaccionesService) { }
+  constructor(private service: TransaccionesService) {
+    const transacciones$: Observable<any[]> = service.getTransacciones$();
+
+    transacciones$.subscribe(
+      res => (this.transacciones = res),
+      err => console.error(err),
+      () => console.log('THE END'),
+    );
+  }
 
   public balance(): number {
     let total = 0;
@@ -27,5 +37,4 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
