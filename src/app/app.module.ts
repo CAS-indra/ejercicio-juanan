@@ -4,13 +4,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
-import { TituloComponent } from './titulo/titulo.component';
+import { TitleComponent } from './title/title.component';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TituloComponent,
+    TitleComponent,
     HomeComponent
   ],
   imports: [
