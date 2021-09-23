@@ -1,1 +1,45 @@
-<p>nueva-transaccion works!</p>
+<form [formGroup]="formGroup"
+      (ngSubmit)="submitProject()">
+  <fieldset>
+    <div>
+      <label for="name">Nombre: </label>
+      <input type="text"
+             name="name"
+             id="name"
+             formControlName="name">
+      <span *ngIf="formGroup.controls['name'].errors"> * Ojo...</span>
+    </div>
+    <div>
+      <label for="description">Descripción: </label>
+      <input type="text"
+             name="description"
+             id="description"
+             formControlName="description">
+    </div>
+    <div>
+      <label for="kind">Tipo Transacción: </label>
+      <input type="text"
+             name="kind"
+             id="kind"
+             formControlName="kind">
+    </div>
+    <div>
+      <label for="amount">Importe: </label>
+      <input type="number"
+             name="amount"
+             id="amount"
+             formControlName="amount">
+    </div>
+    <div>
+      <label for="startDate">Fecha Transacción: </label>
+      <input type="date"
+             name="startDate"
+             id="startDate"
+             formControlName="startDate">
+    </div>
+  </fieldset>
+  <button>Reset</button>
+  <button type="submit"
+          [disabled]="formGroup.invalid">Enviar</button>
+</form>
+<h2>{{ message }}</h2>

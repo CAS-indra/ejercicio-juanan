@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { NuevaTransaccionRoutingModule } from './nueva-transaccion-routing.module';
 import { NuevaTransaccionComponent } from './nueva-transaccion.component';
 
@@ -11,7 +11,8 @@ import { NuevaTransaccionComponent } from './nueva-transaccion.component';
   ],
   imports: [
     CommonModule,
-    NuevaTransaccionRoutingModule
+    NuevaTransaccionRoutingModule,
+    ReactiveFormsModule,
   ]
 })
 export class NuevaTransaccionModule { }
