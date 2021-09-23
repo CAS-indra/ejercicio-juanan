@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 import { TransaccionesService } from '../data/transacciones.service';
 
 @Component({
-  selector: 'app-transaccion',
-  templateUrl: './transaccion.component.html',
-  styleUrls: ['./transaccion.component.scss']
+  selector: 'app-transaction-editor',
+  templateUrl: './transaction-editor.component.html',
+  styleUrls: ['./transaction-editor.component.scss']
 })
-export class TransaccionComponent implements OnInit {
+export class TransactionEditorComponent implements OnInit {
   public transaccionId = '';
   public transaccion$: Observable<any>;
 
