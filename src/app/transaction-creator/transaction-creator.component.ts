@@ -3,11 +3,11 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { TransaccionesService } from '../data/transacciones.service';
 
 @Component({
-  selector: 'app-nueva-transaccion',
-  templateUrl: './nueva-transaccion.component.html',
-  styleUrls: ['./nueva-transaccion.component.scss']
+  selector: 'app-transaction-creator',
+  templateUrl: './transaction-creator.component.html',
+  styleUrls: ['./transaction-creator.component.scss'],
 })
-export class NuevaTransaccionComponent implements OnInit {
+export class TransactionCreatorComponent implements OnInit {
   public formGroup: FormGroup;
   public message = '';
 

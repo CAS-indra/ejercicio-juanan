@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
   { path: 'contact', loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule) },
   { path: 'auth/login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
-  { path: 'transaction/new', loadChildren: () => import('./nueva-transaccion/nueva-transaccion.module').then(m => m.NuevaTransaccionModule) },
+  { path: 'transaction/new', loadChildren: () => import('./transaction-creator/transaction-creator.module').then(m => m.TransactionCreatorModule) },
   { path: 'transaction-editor', loadChildren: () => import('./transaction-editor/transaction-editor.module').then(m => m.TransactionEditorModule) },
 ];
 

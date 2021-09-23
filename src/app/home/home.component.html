@@ -5,7 +5,7 @@
 <div *ngIf="transacciones">
   <div *ngFor="let transaccion of transacciones">
     <span [ngClass]="{ 'spent': transaccion.kind=='spent', 'income': transaccion.kind=='income' }">
-      <a routerLink="./transaccion/{{transaccion.id}}">
+      <a routerLink="./transaction/{{transaccion.id}}">
         {{ transaccion.name }} - {{ transaccion.amount }}
       </a>
     </span>
